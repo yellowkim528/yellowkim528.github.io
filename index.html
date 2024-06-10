@@ -65,12 +65,62 @@
       transform: translate(5.5%, -108.5%);
     }
 
+    .btns {
+      display: flex;
+      position: absolute;
+    }
+
     .btn {
       display: flex;
+      width: 150px;
       justify-content: baseline;
       position: absolute;
       z-index: 2;
     }
+    
+    .btn.intro {
+      transform: translate(-150%, 150%);
+    }
+    .btn.tech {
+      transform: translate(50%, 150%);
+    }
+    .btn.project {
+      transform: translate(-150%, 350%);
+    }
+    .btn.contact {
+      transform: translate(50%, 350%);
+    }
+    .btn:hover {
+      outline: 10px solid #DE3131;
+    }
+
+    .labels {
+      display: flex;
+      position: absolute;
+      z-index: 2;
+      font-family: 'goldfont';
+      font-size: 20pt;
+      font-weight: bold;
+      color: aliceblue;
+      
+    }
+    .label{
+      font-style: 10px solid silver;
+    }
+    
+    .label.intro{
+      transform: translate(-60%, 850%);
+    }
+    .label.tech{
+      transform: translate(230%, 850%);
+    }
+    .label.project{
+      transform: translate(-260%, 1450%);
+    }
+    .label.contact{
+      transform: translate(50%, 1450%);
+    }
+
 
   </style>
 </head>
@@ -90,11 +140,17 @@
       <img src="screen.png" class="monitor monitor2">
       <img src="./HGSSPauseMenu/hgsspausemenubg.png" class="menu">
     </div>
-    <div>
-      <img src="./HGSSPauseMenu/controlsicon.png" class="btn">
-      <img src="./HGSSPauseMenu/bagicon.png" class="btn">
-      <img src="./HGSSPauseMenu/debugicon.png" class="btn">
-      <img src="./HGSSPauseMenu/savegameicon.png" class="btn">
+    <div class="btns">
+      <img src="./HGSSPauseMenu/controlsicon.png" class="btn intro">
+      <img src="./HGSSPauseMenu/debugicon.png" class="btn tech">
+      <img src="./HGSSPauseMenu/bagicon.png" class="btn project">
+      <img src="./HGSSPauseMenu/savegameicon.png" class="btn contact">
+    </div>
+    <div class="labels">
+      <p class="label intro">자기소개</p>
+      <p class="label tech">사용기술</p>
+      <p class="label project">프로젝트</p>
+      <p class="label contact">연락처</p>
     </div>
   </div>
 
