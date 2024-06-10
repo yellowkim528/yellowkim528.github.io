@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mainpage</title>
+  <style>
+    @font-face {
+      font-family: 'goldfont';
+      src: url('goldfont.ttf') format('truetype');
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      /* font-family: 'Press Start 2P', cursive; 레트로 폰트 */
+      background-color: rgb(24, 24, 24);
+    }
+    .container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .monitor {
+      position: relative;
+      border-radius: 10px;
+      z-index: 1;
+      
+    }
+    .dialog_box_img{
+      position: absolute;
+      /* top: 300px;
+      left: 300px; */
+      transform: translate(-50%,-120%);
+      width: 715px;
+      z-index: 2;
+      opacity: 0;
+    }
+    .message {
+      display: flex;
+      justify-content: baseline;
+      position: absolute;
+      z-index: 2;
+      font-family: 'goldfont';
+      font-size: 30pt;
+      font-weight: bold;
+      color: black;
+      opacity: 0;
+      /* transition: opacity 0.5s ease-in-out; */
+    }
+    .message1 {
+      transform: translate(-66%, -600%);
+    }
+    .message2 {
+      transform: translate(-103%, -480%);
+    }
+    .menu {
+      display: flex;
+      width: 721.5px;
+      height: 522px;
+      position: absolute;
+      z-index: 2;
+      transform: translate(5.5%, -108.5%);
+    }
+
+    .btn {
+      display: flex;
+      justify-content: baseline;
+      position: absolute;
+      z-index: 2;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <img src="pokemon_center.png" class="monitor monitor1">
+    </div>
+    <div class="dialogue-box">
+      <img src="dialog_box.jpg" class="dialog_box_img">
+    </div>
+    <div>
+      <p class="message message1">어서오세요. 김노랭 홈페이지입니다</p>
+      <p class="message message2">무엇을 도와드릴까요?</p>
+    </div>
+    <div>
+      <img src="screen.png" class="monitor monitor2">
+      <img src="./HGSSPauseMenu/hgsspausemenubg.png" class="menu">
+    </div>
+    <div>
+      <img src="./HGSSPauseMenu/controlsicon.png" class="btn">
+      <img src="./HGSSPauseMenu/bagicon.png" class="btn">
+      <img src="./HGSSPauseMenu/debugicon.png" class="btn">
+      <img src="./HGSSPauseMenu/savegameicon.png" class="btn">
+    </div>
+  </div>
+
+  <script>
+    // 인사메세지 
+    document.addEventListener('DOMContentLoaded', () => {
+      const dialogBoxImg = document.querySelector('.dialog_box_img');
+      const message1Element = document.querySelector('.message1');
+      const message2Element = document.querySelector('.message2');
+
+      // dialog_box_img를 1초 뒤에 나타나게
+      setTimeout(() => {
+        dialogBoxImg.style.opacity = 1;
+
+        // message1을 dialog_box_img가 나타난 후 0.5초 뒤에 타이핑 효과로 나타나게
+        setTimeout(() => {
+          typeWriterEffect(message1Element, 0, () => {
+            // message2를 message1이 다 나타난 후 0.5초 뒤에 타이핑 효과로 나타나게
+            setTimeout(() => {
+              typeWriterEffect(message2Element, 0);
+            }, 500);
+          });
+        }, 500);
+      }, 1000);
+
+      function typeWriterEffect(element, index, callback) {
+        const text = element.textContent;
+        element.textContent = '';
+        element.style.opacity = 1;
+
+        function type() {
+          if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 50); // 타이핑 속도 조절
+          } else if (callback) {
+            callback();
+          }
+        }
+        type();
+      }
+    });
+  </script>
+</body>
+</html>
