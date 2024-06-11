@@ -1,0 +1,188 @@
+@import url("https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css");
+
+@font-face {
+  font-family: 'goldfont';
+  src: url('./../goldfont.ttf') format('truetype');
+}
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Press Start 2P', cursive; 레트로 폰트 */
+  background-color: rgb(24, 24, 24);
+}
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.monitor {
+  position: relative;
+  border-radius: 10px;
+  z-index: 1;
+  
+}
+/* .content {
+  display: flex;
+  flex-direction: column;
+} */
+
+.dialogue_box {
+  position: relative;
+  
+}
+
+.dialog_box_img{
+  position: relative;
+  /* top: 300px;
+  left: 300px; */
+  transform: translate(0%,-120%);
+  width: 715px;
+  z-index: 2;
+  opacity: 0;
+}
+.message {
+  margin: 0;
+  padding: 0;
+  left: 5%;
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  z-index: 3;
+  font-family: 'goldfont';
+  font-size: 40pt;
+  font-weight: bold;
+  color: black;
+  opacity: 0;
+  /* transition: opacity 0.5s ease-in-out; */
+}
+.message1 {
+  transform: translate(0%, -730%);
+}
+.message2 {
+  transform: translate(0%, -620%);
+}
+.menu {
+  display: flex;
+  width: 721.5px;
+  height: 522px;
+  position: absolute;
+  z-index: 2;
+  transform: translate(5.5%, -108.5%);
+}
+
+
+.btn {
+  display: flex;
+  width: 150px;
+  justify-content: baseline;
+  z-index: 2;
+}
+.btn.intro {
+  transform: translate(-150%, 150%);
+}
+.btn.tech {
+  transform: translate(50%, 150%);
+}
+.btn.project {
+  transform: translate(-150%, 350%);
+}
+.btn.contact {
+  transform: translate(50%, 350%);
+}
+.btn:hover {
+  outline: 10px solid #DE3131;
+}
+
+.labels {
+  display: flex;
+  position: absolute;
+  z-index: 2;
+  font-family: "Galmuri11", sans-serif;
+  font-size: 25pt;
+  color: aliceblue;
+}
+.label{
+  font-style: 10px solid silver;
+}
+.label.intro{
+  transform: translate(25%, 600%);
+}
+.label.tech{
+  transform: translate(150%, 600%);
+}
+.label.project{
+  transform: translate(-175%, 1030%);
+}
+.label.contact{
+  transform: translate(-50%, 1030%);
+}
+
+/* 모바일용 스타일 */
+@media (max-width: 978px) {
+  .monitor {
+    position: relative;
+    width: 100vw;
+    border-radius: 10px;
+    z-index: 1;
+  }
+  .dialogue_box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dialog_box_img {
+    width: 90%;
+    transform: translate(-50%, -120%);
+  }
+  .message {
+    display: flex;
+    --font-size: clamp(0.8rem, 3vw, 2rem);
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: var(--font-size);
+  }
+  .message1 {
+    transform: translate(-84%, -600%);
+  }
+  .message2 {
+    transform: translate(-130%, -400%);
+  }
+  .menu {
+    width: 73%;
+    height: 43.5%;
+    /* transform: translate(5%, -108%); */
+  }
+  .btn {
+    width: 15vw;
+  }
+  .btn.intro {
+    transform: translate(-80%, 100%);
+  }
+  .btn.tech {
+    transform: translate(20%, 100%);
+  }
+  .btn.project {
+    transform: translate(-80%, 200%);
+  }
+  .btn.contact {
+    transform: translate(20%, 200%);
+  }
+  .labels {
+    font-size: 12pt;
+  }
+  .label.intro {
+    transform: translate(-50%, 600%);
+  }
+  .label.tech {
+    transform: translate(150%, 600%);
+  }
+  .label.project {
+    transform: translate(-150%, 1000%);
+  }
+  .label.contact {
+    transform: translate(50%, 1000%);
+  }
+}
