@@ -1,0 +1,220 @@
+@import url("https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css");
+
+@font-face {
+  font-family: 'goldfont';
+  src: url('./../goldfont.ttf') format('truetype');
+}
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Press Start 2P', cursive; 레트로 폰트 */
+  background-color: rgb(24, 24, 24);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.content,
+.monitor-container {
+  position: relative;
+}
+
+.monitor {
+  position: relative;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.dialogue_box {
+  position: absolute;
+  top: 0; 
+  left: 50%;
+  transform: translate(-50%, 150%);  
+  z-index: 2; 
+}
+
+.dialog_box_img {
+  width: 715px;
+  opacity: 0;
+}
+
+.message {
+  margin: 0;
+  padding: 0;
+  left: 5%;
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  z-index: 3;
+  font-family: 'goldfont';
+  font-size: 40pt;
+  font-weight: bold;
+  color: black;
+  opacity: 0;
+  /* transition: opacity 0.5s ease-in-out; */
+}
+
+.message1 {
+  transform: translate(0%, -310%);
+}
+
+.message2 {
+  transform: translate(0%, -190%);
+}
+
+.menu {
+  display: flex;
+  width: 721.5px;
+  height: 522px;
+  position: absolute;
+  z-index: 2;
+  transform: translate(5.5%, -108.5%);
+}
+
+.btn_box{
+  position: absolute;
+  top: 0;
+  left: 20%;
+  z-index: 3; 
+}
+
+.btn {
+  margin: 0;
+  width: 150px;
+  z-index: 3;
+}
+
+.btn.intro {
+  transform: translate(0%, 150%);
+}
+
+.btn.tech {
+  transform: translate(100%, 150%);
+}
+
+.btn.project {
+  transform: translate(-207%, 350%);
+}
+
+.btn.contact {
+  transform: translate(-107%, 350%);
+}
+
+.btn:hover {
+  outline: 10px solid #DE3131;
+}
+
+.label {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 1%;
+  z-index: 3;
+  font-family: "Galmuri11", sans-serif;
+  font-size: 25pt;
+  color: aliceblue;
+  z-index: 3;
+}
+
+
+.label.intro {
+  transform: translate(0%, 570%);
+}
+
+.label.tech {
+  transform: translate(234%, 570%);
+}
+
+.label.project {
+  transform: translate(0%, 1020%);
+}
+
+.label.contact {
+  transform: translate(330%, 1020%);
+}
+
+/* 모바일용 스타일 */
+@media (max-width: 978px) {
+  .monitor {
+    position: relative;
+    width: 100vw;
+    border-radius: 10px;
+    z-index: 1;
+  }
+  .dialogue_box {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    transform: translate(5%, 148%);  
+  }
+
+  .dialog_box_img {
+    width: 90%;
+  }
+  .message {
+    --font-size: clamp(1rem, 5vw, 6rem);
+    margin: 0;
+    /* overflow: hidden;
+    white-space: nowrap; */
+    font-size: var(--font-size);
+  }
+  .message1 {
+    transform: translate(0%, -400%);
+  }
+  .message2 {
+    transform: translate(-0%, -250%);
+  }
+
+  .menu {
+    position: absolute;
+    width: 90%;
+    height: 86.5%;
+    /* transform: translate(5%, -108%); */
+  }
+
+
+
+  .btn {
+    width: 20vw;
+  }
+  .btn.intro {
+    transform: translate(0%, 150%);
+  }
+  .btn.tech {
+    transform: translate(100%, 150%);
+  }
+  .btn.project {
+    transform: translate(-215%, 330%);
+  }
+  .btn.contact {
+    transform: translate(207%, 225%);
+  }
+  .btn:hover {
+    outline-color: #DE3131;
+    outline-width: clamp(5px, 1vw, 10px);
+  }
+
+  .label {
+    --font-size: clamp(0.8rem, 4vw, 5rem);
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: var(--font-size);
+  }
+  .label.intro {
+    transform: translate(10%, 640%);
+  }
+  .label.tech {
+    transform: translate(270%, 640%);
+  }
+  .label.project {
+    transform: translate(10%, 1100%);
+  }
+  .label.contact {
+    transform: translate(370%, 1100%);
+  }
+}
