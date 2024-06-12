@@ -187,20 +187,22 @@ body {
 
 
   .btn {
+    margin: 0;
+    position: absolute;
     width: 20vw;
     overflow: hidden;
   }
   .btn.intro {
-    transform: translate(0%, 150%);
+    transform: translate(0%, 130%);
   }
   .btn.tech {
-    transform: translate(100%, 150%);
+    transform: translate(200%, 130%);
   }
   .btn.project {
-    transform: translate(-215%, 330%);
+    transform: translate(0%, 310%);
   }
   .btn.contact {
-    transform: translate(207%, 225%);
+    transform: translate(200%, 310%);
   }
   .btn:hover {
     outline-color: #DE3131;
@@ -208,27 +210,23 @@ body {
   }
 
   .label {
+    position: absolute;
     margin: 0;
-    overflow-y: hidden;
+    overflow: hidden;
     white-space: nowrap;
-    font-size: clamp(0.3rem, 4vw, 5rem);
-    -webkit-transform: translate(0%, 0%); 
-    transform: translate(0%, 0%); 
+    /* font-size: clamp(0.3rem, 4vw, 5rem); */
+    font-size: 4vw;
   }
   .label.intro {
-    -webkit-transform: translate(10%, 640%); 
-    transform: translate(10%, 640%);
+    transform: translate(12%, 600%);
   }
   .label.tech {
-    -webkit-transform: translate(270%, 640%); 
-    transform: translate(270%, 640%);
+    transform: translate(265%, 600%);
   }
   .label.project {
-    -webkit-transform: translate(10%, 1100%); 
-    transform: translate(10%, 1100%);
+    transform: translate(12%, 1050%);
   }
   .label.contact {
-    -webkit-transform: translate(370%, 1100%); 
-    transform: translate(370%, 1100%);
+    transform: translate(370%, 1050%);
   }
 }
