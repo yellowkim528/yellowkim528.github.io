@@ -141,6 +141,11 @@ body {
 
 /* 모바일용 스타일 */
 @media (max-width: 978px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
   .monitor {
     position: relative;
@@ -183,6 +188,7 @@ body {
 
   .btn {
     width: 20vw;
+    overflow: hidden;
   }
   .btn.intro {
     transform: translate(0%, 150%);
@@ -202,22 +208,27 @@ body {
   }
 
   .label {
-    --font-size: clamp(0.3rem, 4vw, 5rem);
     margin: 0;
-    overflow: hidden;
+    overflow-y: hidden;
     white-space: nowrap;
-    font-size: var(--font-size);
+    font-size: clamp(0.3rem, 4vw, 5rem);
+    -webkit-transform: translate(0%, 0%); 
+    transform: translate(0%, 0%); 
   }
   .label.intro {
+    -webkit-transform: translate(10%, 640%); 
     transform: translate(10%, 640%);
   }
   .label.tech {
+    -webkit-transform: translate(270%, 640%); 
     transform: translate(270%, 640%);
   }
   .label.project {
+    -webkit-transform: translate(10%, 1100%); 
     transform: translate(10%, 1100%);
   }
   .label.contact {
+    -webkit-transform: translate(370%, 1100%); 
     transform: translate(370%, 1100%);
   }
 }
