@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mainpage</title>
+  <title>WELCOME!</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri/dist/galmuri.css">
   <link rel="stylesheet" href="./css/index.css">
   <style>
@@ -45,11 +45,20 @@
     </div>
   </div>
 
+
   <audio id="bgm" autoplay loop muted>
     <source src="bgm.mp3" type="audio/mpeg">
   </audio>
 
   <script>
+    // 포켓몬센터 브금 시작
+    window.onload = function() {
+      var bgm = document.getElementById("bgm");
+      bgm.play().catch(function(error) {
+        console.log("자동 재생 실패:", error);
+      });
+    };
+
     // 인사메세지 
     document.addEventListener('DOMContentLoaded', () => {
       const dialogBoxImg = document.querySelector('.dialog_box_img');
